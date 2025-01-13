@@ -1,5 +1,10 @@
 import { describe, test, expect } from '@jest/globals';
-import { capitalize, reverseString, calculator } from './practice.js';
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+} from './practice.js';
 
 test('Fist letter should be capitalized', () => {
   expect(capitalize('champion')).toBe('Champion');
@@ -33,4 +38,17 @@ describe('Calculator', () => {
     expect(calculator.multiply(25, 5)).toBe(125);
     expect(calculator.multiply(75, 4)).toBe(300);
   });
+});
+
+// Caesar Chipher
+test('alphabet should wrap', () => {
+  expect(caesarCipher('xyz', 3)).toBe('abc');
+});
+
+test('Case preservation', () => {
+  expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+});
+
+test('Punctuations, spaces, and other non-alphabetical characters should remain unchanged', () => {
+  expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
