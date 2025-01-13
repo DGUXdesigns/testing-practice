@@ -28,13 +28,10 @@ export function caesarCipher(string, shift) {
   const LowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
   const UpperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  const cipherLower = LowerCaseLetters.slice(shift).concat(
-    LowerCaseLetters.slice(0, shift),
-  );
-
-  const cipherUpper = UpperCaseLetters.slice(shift).concat(
-    UpperCaseLetters.slice(0, shift),
-  );
+  const cipherLower =
+    LowerCaseLetters.slice(shift) + LowerCaseLetters.slice(0, shift);
+  const cipherUpper =
+    UpperCaseLetters.slice(shift) + UpperCaseLetters.slice(0, shift);
 
   let newString = '';
 
@@ -51,4 +48,13 @@ export function caesarCipher(string, shift) {
   }
 
   return newString;
+}
+
+export function analyzeArray(arr) {
+  return {
+    average: arr.reduce((sum, num) => sum + num, 0) / arr.length,
+    min: Math.min(...arr),
+    max: Math.max(...arr),
+    length: arr.length,
+  };
 }
