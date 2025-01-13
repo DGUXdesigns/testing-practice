@@ -4,6 +4,7 @@ import {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } from './practice.js';
 
 test('Fist letter should be capitalized', () => {
@@ -55,4 +56,14 @@ test('Punctuations, spaces, and other non-alphabetical characters should remain 
 
 test('Should shift backwards', () => {
   expect(caesarCipher('abc', -3)).toBe('xyz');
+});
+
+// AnalyzeArray
+test('analyzeArray returns the correct object for the input [1,8,3,4,2,6]', () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
