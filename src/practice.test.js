@@ -54,5 +54,5 @@ test('Punctuations, spaces, and other non-alphabetical characters should remain 
 });
 
 test('Should shift backwards', () => {
-  expect(caesarCipher('abc', -1)).toBe('xyz');
+  expect(caesarCipher('abc', -3)).toBe('xyz');
 });
