@@ -1,4 +1,4 @@
-import { describe, test, expect } from '@jest/globals';
+import { it, describe, test, expect } from '@jest/globals';
 import {
   capitalize,
   reverseString,
@@ -59,11 +59,26 @@ test('Should shift backwards', () => {
 });
 
 // AnalyzeArray
-test('analyzeArray returns the correct object for the input [1,8,3,4,2,6]', () => {
-  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
-    average: 4,
-    min: 1,
-    max: 8,
-    length: 6,
+describe('analyzeArray', () => {
+  const result = analyzeArray([1, 8, 3, 4, 2, 6]);
+
+  it('should return an object', () => {
+    expect(result).toBeInstanceOf(Object);
+  });
+
+  it('Should have the average of all elements in the array', () => {
+    expect(result).toHaveProperty('average', 4);
+  });
+
+  it('Should show the smallest number in the array', () => {
+    expect(result).toHaveProperty('min', 1);
+  });
+
+  it('Should show the biggest number in the array', () => {
+    expect(result).toHaveProperty('max', 8);
+  });
+
+  it('Should show the length of the array', () => {
+    expect(result).toHaveProperty('length', 6);
   });
 });
