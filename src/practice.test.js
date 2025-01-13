@@ -42,20 +42,22 @@ describe('Calculator', () => {
 });
 
 // Caesar Chipher
-test('alphabet should wrap', () => {
-  expect(caesarCipher('xyz', 3)).toBe('abc');
-});
+describe('Caesar Cipher', () => {
+  test('alphabet should wrap', () => {
+    expect(caesarCipher('xyz', 3)).toBe('abc');
+  });
 
-test('Case preservation', () => {
-  expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
-});
+  test('Case preservation', () => {
+    expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+  });
 
-test('Punctuations, spaces, and other non-alphabetical characters should remain unchanged', () => {
-  expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
-});
+  test('Punctuations, spaces, and other non-alphabetical characters should remain unchanged', () => {
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+  });
 
-test('Should shift backwards', () => {
-  expect(caesarCipher('abc', -3)).toBe('xyz');
+  test('Should shift backwards', () => {
+    expect(caesarCipher('abc', -3)).toBe('xyz');
+  });
 });
 
 // AnalyzeArray
