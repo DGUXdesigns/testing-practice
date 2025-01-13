@@ -52,3 +52,7 @@ test('Case preservation', () => {
 test('Punctuations, spaces, and other non-alphabetical characters should remain unchanged', () => {
   expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
+
+test('Should shift backwards', () => {
+  expect(caesarCipher('abc', -1)).toBe('xyz');
+});
